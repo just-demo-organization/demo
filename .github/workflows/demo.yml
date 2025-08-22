@@ -16,6 +16,8 @@ env:
 jobs:
   job-1:
     runs-on: ubuntu-latest
+    env:
+      mobile: 0090000020202
     steps:
       - run: echo $GITHUB
       - uses: actions/checkout@v4
