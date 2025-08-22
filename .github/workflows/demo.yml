@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo $GITHUB
+      - run: echo "$GITHUB_CONTEXT"
       - uses: actions/checkout@v4
       - name: Make a new file
         run: echo "Heloooo" > games.txt
