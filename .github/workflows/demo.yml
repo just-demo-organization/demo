@@ -1,0 +1,22 @@
+name: demo
+run-name: You chose "${{ inputs.country }}"
+on:
+  workflow_dispatch:
+    inputs:
+        country:
+          required: true
+          type: choice
+          options:
+            - Egypt
+            - Saudi Arabia
+            - USA
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo $GITHUB
+      - uses: actions/checkout@v4
+      - name: Make a new file
+        run: echo "Heloooo" > games.txt
+      - name: Read the file
+        run: cat games.txt
