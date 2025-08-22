@@ -10,14 +10,18 @@ on:
             - Egypt
             - Saudi Arabia
             - USA
+env:
+  mobile: 010101011090
+  
 jobs:
   job-1:
     runs-on: ubuntu-latest
     steps:
       - run: echo $GITHUB
-      - run: echo "$GITHUB_CONTEXT"
       - uses: actions/checkout@v4
       - name: Make a new file
         run: echo "Heloooo" > games.txt
       - name: Read the file
         run: cat games.txt
+      - name: Print all env variables attatched with github action either
+        run: printenv
